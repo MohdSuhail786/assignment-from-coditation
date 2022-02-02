@@ -31,7 +31,7 @@ export default function ProductForm({product,label,handleSubmit,handleChange}) {
                     <TextField id="outlined-basic" label="Description" value={product.description} onChange={(e)=>handleChange('description',e.target.value)} variant="outlined" />    
                     <TextField id="outlined-basic" label="Color" value={product.color} onChange={(e)=>handleChange('color',e.target.value)} variant="outlined" />    
                     <TextField id="outlined-basic" label="Stock" value={product.stock} onChange={(e)=>handleChange('stock',e.target.value)} variant="outlined" />    
-                    <MultipleSelectChip label={'Categories'} value={product.categories} options={categoryNames} handleChange={(e)=>handleChange('categories',e.target.value)}/>
+                    <MultipleSelectChip disabled={label==='Update Product'} label={'Categories'} value={product.categories} options={categoryNames} handleChange={(e)=>handleChange('categories',e.target.value)}/>
                     <Button variant="contained" onClick={handleSubmit}>Submit</Button>
                 </div>
             </div>
