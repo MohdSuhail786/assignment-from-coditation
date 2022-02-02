@@ -1,0 +1,16 @@
+header {
+    background: rgb(47 123 255);
+}
+
+header div {
+    display: flex;
+    justify-content: flex-start;
+}
+
+header div button {
+    margin-right: 15px !important;
+}
+
+.nav-bar {
+    width: 250px;
+}
