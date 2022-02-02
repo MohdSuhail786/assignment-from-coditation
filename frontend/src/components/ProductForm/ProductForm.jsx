@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import "./ProductForm.css"
+import { Box } from '@mui/system';
 
 export default function ProductForm({product,label,handleSubmit,handleChange}) {
     const navigate = useNavigate()
@@ -26,13 +27,15 @@ export default function ProductForm({product,label,handleSubmit,handleChange}) {
                         </div>
                         <h2>{label}</h2>
                     </div>
-                    <TextField id="outlined-basic" label="Name" value={product.name} onChange={(e)=>handleChange('name',e.target.value)} variant="outlined" />    
-                    <TextField id="outlined-basic" label="Price" value={product.price} onChange={(e)=>handleChange('price',e.target.value)} variant="outlined" />    
-                    <TextField id="outlined-basic" label="Description" value={product.description} onChange={(e)=>handleChange('description',e.target.value)} variant="outlined" />    
-                    <TextField id="outlined-basic" label="Color" value={product.color} onChange={(e)=>handleChange('color',e.target.value)} variant="outlined" />    
-                    <TextField id="outlined-basic" label="Stock" value={product.stock} onChange={(e)=>handleChange('stock',e.target.value)} variant="outlined" />    
+                    <form className='form-container' style={{padding:0,margin:0}} onSubmit={handleSubmit}>
+                    <TextField required id="outlined-basic" label="Name" value={product.name} onChange={(e)=>handleChange('name',e.target.value)} variant="outlined" />    
+                    <TextField required id="outlined-basic" label="Price" value={product.price} onChange={(e)=>handleChange('price',e.target.value)} variant="outlined" />    
+                    <TextField required id="outlined-basic" label="Description" value={product.description} onChange={(e)=>handleChange('description',e.target.value)} variant="outlined" />    
+                    <TextField required id="outlined-basic" label="Color" value={product.color} onChange={(e)=>handleChange('color',e.target.value)} variant="outlined" />    
+                    <TextField required id="outlined-basic" label="Stock" value={product.stock} onChange={(e)=>handleChange('stock',e.target.value)} variant="outlined" />    
                     <MultipleSelectChip disabled={label==='Update Product'} label={'Categories'} value={product.categories} options={categoryNames} handleChange={(e)=>handleChange('categories',e.target.value)}/>
-                    <Button variant="contained" onClick={handleSubmit}>Submit</Button>
+                    <Button variant="contained" type='submit'>Submit</Button>
+                    </form>
                 </div>
             </div>
         </>

@@ -8,7 +8,8 @@ export default function CreateCategory() {
     const [snackBar,setSnackBar] = useState({open:false,message:'',severity:'success'})
 
     const propsTo = {
-        handleSubmit : async () => {
+        handleSubmit : async (e) => {
+            e.preventDefault();
             const res = (await axios.post(`${process.env.REACT_APP_API_ENDPOINT}/api/category`,category)).data;
             if(res.error) {
                 setSnackBar({open:true,message:'Some error occurred',severity:'error'});

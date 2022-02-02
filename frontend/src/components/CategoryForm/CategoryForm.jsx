@@ -25,9 +25,11 @@ export default function CategoryForm({label,category,handleChange,handleSubmit})
                         </div>
                         <h2>{label}</h2>
                     </div>
-                    <TextField id="outlined-basic" label="Name" value={category.name} onChange={(e)=>handleChange('name',e.target.value)} variant="outlined" />    
+                    <form onSubmit={handleSubmit} className='form-container' style={{margin:0,padding:0}}>
+                    <TextField required id="outlined-basic" label="Name" value={category.name} onChange={(e)=>handleChange('name',e.target.value)} variant="outlined" />    
                     <BasicSelect label={'Parent Category'} value={category._parentCategoryId} options={categoryNames} handleChange={(e)=>handleChange('_parentCategoryId',e.target.value)}/>
-                    <Button variant="contained" onClick={handleSubmit}>Submit</Button>
+                    <Button variant="contained" type='submit'>Submit</Button>
+                    </form>
                 </div>
             </div>
         </>

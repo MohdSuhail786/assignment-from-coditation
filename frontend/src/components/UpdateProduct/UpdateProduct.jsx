@@ -16,7 +16,8 @@ export default function UpdateProduct() {
     },[])
 
     const propsTo = {
-        handleSubmit : async () => {
+        handleSubmit : async (e) => {
+            e.preventDefault();
             const res = (await axios.post(`${process.env.REACT_APP_API_ENDPOINT}/api/update/product`,{...product,_productId}))
             if(res.error) {
                 setSnackBar({open:true,message:'Some error occurred',severity:'error'});
