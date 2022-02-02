@@ -1,8 +1,8 @@
 import { AppBar, IconButton, SwipeableDrawer, Toolbar, Typography } from "@mui/material";
 import MenuIcon from "@material-ui/icons/Menu";
-import "./Header.css"
 import { Fragment,useState } from "react";
 import NavBar from "./NavBar";
+import "./Header.css"
 
 export default function Header({tab}) {
 

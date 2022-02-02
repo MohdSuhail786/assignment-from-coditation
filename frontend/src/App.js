@@ -1,6 +1,6 @@
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+import {Categories, UpdateProduct, CreateProduct, CreateCategory, Header, Products} from './components/components';
 import './App.css';
-import {Categories, CategoryForm,Header,ProductForm,Products} from './components/components';
 
 function App() {
   return (
@@ -9,9 +9,9 @@ function App() {
       <Routes>
         <Route exact path='/' element={<><Header tab={"Products"}/> <Products /></>} /> 
         <Route exact path='/categories' element={<><Header tab={"Categories"}/> <Categories /></>} /> 
-        <Route exact path='/add/product' element={<><Header tab={"Add Product"} /><ProductForm /></>} />
-        <Route exact path='/add/category' element={<><Header tab={"Add Category"} /><CategoryForm /></>} />
-        <Route exact path='/update/product/:_productId' element={<><Header tab={"Update Product"}/><ProductForm  /></>} />
+        <Route exact path='/add/product' element={<><Header tab={"Add Product"} /><CreateProduct /></>} />
+        <Route exact path='/update/product/:_productId' element={<><Header tab={"Update Product"}/><UpdateProduct  /></>} />
+        <Route exact path='/add/category' element={<><Header tab={"Add Category"} /><CreateCategory /></>} />
       </Routes>
     </Router>
     </div>

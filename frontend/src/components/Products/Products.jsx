@@ -1,8 +1,7 @@
 import { Divider, IconButton, List, ListItem, ListItemAvatar, ListItemButton, ListItemText } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Alert from "../Alert/Alert";
-import BasicSelect from "../BasicSelect/BasicSelect";
+import { BasicSelect, Alert } from "../components";
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import { useNavigate } from "react-router-dom";

@@ -1,7 +1,6 @@
-import { Box, Chip, FormControl, InputLabel, Menu, MenuItem, OutlinedInput, Select } from "@mui/material";
+import { Box, Chip, FormControl, InputLabel, MenuItem, OutlinedInput, Select } from "@mui/material";
 
 export default function MultipleSelectChip({label,value,options,handleChange,disabled}) {
-console.log(value,options,disabled)
 
     return (
         <>

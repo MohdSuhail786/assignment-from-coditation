@@ -11,8 +11,4 @@ router.post('/category',saveCategory)
 router.get('/products',getProducts)
 router.get('/getProduct',getProduct)
 
-router.get('/',async(req,res)=>{
-    return res.json({message:"Welcome!!"})
-})
-
 module.exports = router

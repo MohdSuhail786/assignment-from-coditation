@@ -1,11 +1,10 @@
-import { List } from "@mui/material";
-import axios from "axios";
-import { useEffect, useState } from "react";
-import Alert from "../Alert/Alert";
-import CollapseListItem from "../CollapseListItem/CollapseListItem";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import AddIcon from '@mui/icons-material/Add';
+import { List } from "@mui/material";
+import { useEffect, useState } from "react";
+import { CollapseListItem, Alert } from "../components";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Categories() {
     const navigate = useNavigate();
